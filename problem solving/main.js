@@ -188,18 +188,26 @@
 // document.write(smallerNubmer(5,3,3)+"<br>");
 
 
-function shorterString(string1 , string2 , string3 , string4){
- let longest1=string1.localeCompare(string2);
- let longest2=string3.localeCompare(string4);
- let final=longest1.localeCompare(longest2);
+function shorterString(string1, string2, string3, string4, string5) {
+  let strings = [string1, string2, string3, string4, string5];
 
+  let shortest = strings[0];
+
+  for (let i = 1; i < strings.length; i++) {
+    if (strings[i].length < shortest.length) {
+      shortest = strings[i];
+    }
+  }
+  return shortest;
 }
-document.write(shorterString(air,school,car,by) + " <br ");
-document.write(shorterString(air,tr,car,by,github) + " <br ");
-document.write(shorterString(by,tr,car,air,github) + " <br ");
-document.write(shorterStringshorterString(air,tr,by,car,github) + " <br ");
-document.write(shorterStringshorterString(air,tr,car,github,by) + " <br ");
 
+
+document.write(shorterString("air","school","car","by","github") + "<br>");
+document.write(shorterString("air","tr","car","by","github") + "<br>");
+document.write(shorterString("by","tr","car","air","github") + "<br>");
+document.write(shorterString("air","by","car","school","github") + "<br>");
+document.write(shorterString("air","tr","by","car","github") + "<br>");
+document.write(shorterString("air","tr","car","github","by") + "<br>");
 
 // function isEven(number){
 //     if(number%2==0)
